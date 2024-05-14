@@ -1,0 +1,281 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserEntity {
+  id: Float!
+  email: String!
+  password: String!
+  username: String!
+  description: String!
+  avatarPath: String!
+  role: String!
+  country: String!
+  socialLink: String!
+  rememberToken: String!
+  isVerified: Boolean!
+  isRealTime: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type AuthReturn {
+  id: Float!
+  email: String!
+  password: String!
+  username: String!
+  description: String!
+  avatarPath: String!
+  role: String!
+  country: String!
+  socialLink: String!
+  rememberToken: String!
+  isVerified: Boolean!
+  isRealTime: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  refreshToken: String!
+  accessToken: String!
+}
+
+type Intensive {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type InteractiveCourse {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Post {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Plan {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Test {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Achievment {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type LogIntensive {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type LogInteractiveCourse {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type LogAchivment {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type LogTest {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type File {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Query {
+  profile: UserEntity!
+  users: [UserEntity!]!
+  intensive(id: Int!): Intensive!
+  interactiveCourse(id: Int!): InteractiveCourse!
+  post(id: Int!): Post!
+  plan(id: Int!): Plan!
+  test(id: Int!): Test!
+  achievment(id: Int!): Achievment!
+  logIntensive(id: Int!): LogIntensive!
+  logInteractiveCourse(id: Int!): LogInteractiveCourse!
+  logAchivment(id: Int!): LogAchivment!
+  logTest(id: Int!): LogTest!
+  file(id: Int!): File!
+}
+
+type Mutation {
+  deleteUser(id: Float!): UserEntity!
+  login(data: AuthInput!): AuthReturn!
+  getNewTokens: AuthReturn!
+  register(data: AuthInput!): AuthReturn!
+  createIntensive(createIntensiveInput: CreateIntensiveInput!): Intensive!
+  updateIntensive(updateIntensiveInput: UpdateIntensiveInput!): Intensive!
+  removeIntensive(id: Int!): Intensive!
+  createInteractiveCourse(createInteractiveCourseInput: CreateInteractiveCourseInput!): InteractiveCourse!
+  updateInteractiveCourse(updateInteractiveCourseInput: UpdateInteractiveCourseInput!): InteractiveCourse!
+  removeInteractiveCourse(id: Int!): InteractiveCourse!
+  createPost(createPostInput: CreatePostInput!): Post!
+  updatePost(updatePostInput: UpdatePostInput!): Post!
+  removePost(id: Int!): Post!
+  createPlan(createPlanInput: CreatePlanInput!): Plan!
+  updatePlan(updatePlanInput: UpdatePlanInput!): Plan!
+  removePlan(id: Int!): Plan!
+  createTest(createTestInput: CreateTestInput!): Test!
+  updateTest(updateTestInput: UpdateTestInput!): Test!
+  removeTest(id: Int!): Test!
+  createAchievment(createAchievmentInput: CreateAchievmentInput!): Achievment!
+  updateAchievment(updateAchievmentInput: UpdateAchievmentInput!): Achievment!
+  removeAchievment(id: Int!): Achievment!
+  createLogIntensive(createLogIntensiveInput: CreateLogIntensiveInput!): LogIntensive!
+  updateLogIntensive(updateLogIntensiveInput: UpdateLogIntensiveInput!): LogIntensive!
+  removeLogIntensive(id: Int!): LogIntensive!
+  createLogInteractiveCourse(createLogInteractiveCourseInput: CreateLogInteractiveCourseInput!): LogInteractiveCourse!
+  updateLogInteractiveCourse(updateLogInteractiveCourseInput: UpdateLogInteractiveCourseInput!): LogInteractiveCourse!
+  removeLogInteractiveCourse(id: Int!): LogInteractiveCourse!
+  createLogAchivment(createLogAchivmentInput: CreateLogAchivmentInput!): LogAchivment!
+  updateLogAchivment(updateLogAchivmentInput: UpdateLogAchivmentInput!): LogAchivment!
+  removeLogAchivment(id: Int!): LogAchivment!
+  createLogTest(createLogTestInput: CreateLogTestInput!): LogTest!
+  updateLogTest(updateLogTestInput: UpdateLogTestInput!): LogTest!
+  removeLogTest(id: Int!): LogTest!
+  createFile(createFileInput: CreateFileInput!): File!
+  updateFile(updateFileInput: UpdateFileInput!): File!
+  removeFile(id: Int!): File!
+}
+
+input AuthInput {
+  email: String!
+  password: String!
+}
+
+input CreateIntensiveInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateIntensiveInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateInteractiveCourseInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateInteractiveCourseInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreatePostInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdatePostInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreatePlanInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdatePlanInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateTestInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateTestInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateAchievmentInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateAchievmentInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateLogIntensiveInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateLogIntensiveInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateLogInteractiveCourseInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateLogInteractiveCourseInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateLogAchivmentInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateLogAchivmentInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateLogTestInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateLogTestInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateFileInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateFileInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
