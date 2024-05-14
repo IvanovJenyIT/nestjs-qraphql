@@ -43,9 +43,27 @@ type AuthReturn {
   accessToken: String!
 }
 
-type Intensive {
-  """Example field (placeholder)"""
-  exampleField: Int!
+type TechnologyEntity {
+  id: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  description: String!
+  imageUrl: String!
+}
+
+type IntensiveEntity {
+  id: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  subTitle: String!
+  photoUrl: String!
+  imageUrl: String!
+  countHours: Float!
+  videoId: Float!
+  isModerated: Boolean!
+  tecnologies: [TechnologyEntity!]!
 }
 
 type InteractiveCourse {
@@ -93,15 +111,20 @@ type LogTest {
   exampleField: Int!
 }
 
-type File {
-  """Example field (placeholder)"""
-  exampleField: Int!
+type FileEntity {
+  id: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  url: String!
+  count: Float!
+  isPremium: Boolean!
 }
 
 type Query {
   profile: UserEntity!
   users: [UserEntity!]!
-  intensive(id: Int!): Intensive!
+  intensive(id: Int!): IntensiveEntity!
   interactiveCourse(id: Int!): InteractiveCourse!
   post(id: Int!): Post!
   plan(id: Int!): Plan!
@@ -111,7 +134,8 @@ type Query {
   logInteractiveCourse(id: Int!): LogInteractiveCourse!
   logAchivment(id: Int!): LogAchivment!
   logTest(id: Int!): LogTest!
-  file(id: Int!): File!
+  file(id: Int!): FileEntity!
+  technology(id: Int!): TechnologyEntity!
 }
 
 type Mutation {
@@ -119,9 +143,9 @@ type Mutation {
   login(data: AuthInput!): AuthReturn!
   getNewTokens: AuthReturn!
   register(data: AuthInput!): AuthReturn!
-  createIntensive(createIntensiveInput: CreateIntensiveInput!): Intensive!
-  updateIntensive(updateIntensiveInput: UpdateIntensiveInput!): Intensive!
-  removeIntensive(id: Int!): Intensive!
+  createIntensive(createIntensiveInput: CreateIntensiveInput!): IntensiveEntity!
+  updateIntensive(updateIntensiveInput: UpdateIntensiveInput!): IntensiveEntity!
+  removeIntensive(id: Int!): IntensiveEntity!
   createInteractiveCourse(createInteractiveCourseInput: CreateInteractiveCourseInput!): InteractiveCourse!
   updateInteractiveCourse(updateInteractiveCourseInput: UpdateInteractiveCourseInput!): InteractiveCourse!
   removeInteractiveCourse(id: Int!): InteractiveCourse!
@@ -149,9 +173,12 @@ type Mutation {
   createLogTest(createLogTestInput: CreateLogTestInput!): LogTest!
   updateLogTest(updateLogTestInput: UpdateLogTestInput!): LogTest!
   removeLogTest(id: Int!): LogTest!
-  createFile(createFileInput: CreateFileInput!): File!
-  updateFile(updateFileInput: UpdateFileInput!): File!
-  removeFile(id: Int!): File!
+  createFile(createFileInput: CreateFileInput!): FileEntity!
+  updateFile(updateFileInput: UpdateFileInput!): FileEntity!
+  removeFile(id: Int!): FileEntity!
+  createTechnology(createTechnologyInput: CreateTechnologyInput!): TechnologyEntity!
+  updateTechnology(updateTechnologyInput: UpdateTechnologyInput!): TechnologyEntity!
+  removeTechnology(id: Int!): TechnologyEntity!
 }
 
 input AuthInput {
@@ -275,6 +302,17 @@ input CreateFileInput {
 }
 
 input UpdateFileInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateTechnologyInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateTechnologyInput {
   """Example field (placeholder)"""
   exampleField: Int
   id: Int!

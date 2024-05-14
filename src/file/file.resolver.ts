@@ -1,35 +1,35 @@
-import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
-import { FileService } from './file.service';
-import { File } from './entities/file.entity';
-import { CreateFileInput } from './dto/create-file.input';
-import { UpdateFileInput } from './dto/update-file.input';
+import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql'
+import { FileService } from './file.service'
+import { FileEntity } from './entities/file.entity'
+import { CreateFileInput } from './dto/create-file.input'
+import { UpdateFileInput } from './dto/update-file.input'
 
-@Resolver(() => File)
+@Resolver(() => FileEntity)
 export class FileResolver {
-  constructor(private readonly fileService: FileService) {}
+	constructor(private readonly fileService: FileService) {}
 
-  @Mutation(() => File)
-  createFile(@Args('createFileInput') createFileInput: CreateFileInput) {
-    return this.fileService.create(createFileInput);
-  }
+	@Mutation(() => FileEntity)
+	createFile(@Args('createFileInput') createFileInput: CreateFileInput) {
+		return this.fileService.create(createFileInput)
+	}
 
-  @Query(() => [File], { name: 'file' })
-  findAll() {
-    return this.fileService.findAll();
-  }
+	@Query(() => [FileEntity], { name: 'file' })
+	findAll() {
+		return this.fileService.findAll()
+	}
 
-  @Query(() => File, { name: 'file' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
-    return this.fileService.findOne(id);
-  }
+	@Query(() => FileEntity, { name: 'file' })
+	findOne(@Args('id', { type: () => Int }) id: number) {
+		return this.fileService.findOne(id)
+	}
 
-  @Mutation(() => File)
-  updateFile(@Args('updateFileInput') updateFileInput: UpdateFileInput) {
-    return this.fileService.update(updateFileInput.id, updateFileInput);
-  }
+	@Mutation(() => FileEntity)
+	updateFile(@Args('updateFileInput') updateFileInput: UpdateFileInput) {
+		return this.fileService.update(updateFileInput.id, updateFileInput)
+	}
 
-  @Mutation(() => File)
-  removeFile(@Args('id', { type: () => Int }) id: number) {
-    return this.fileService.remove(id);
-  }
+	@Mutation(() => FileEntity)
+	removeFile(@Args('id', { type: () => Int }) id: number) {
+		return this.fileService.remove(id)
+	}
 }

@@ -19,6 +19,7 @@ import { LogInteractiveCourseModule } from './log-interactive-course/log-interac
 import { LogAchivmentModule } from './log-achivment/log-achivment.module';
 import { LogTestModule } from './log-test/log-test.module';
 import { FileModule } from './file/file.module';
+import { TechnologyModule } from './technology/technology.module';
 
 @Module({
 	imports: [
@@ -50,6 +51,7 @@ import { FileModule } from './file/file.module';
 		LogAchivmentModule,
 		LogTestModule,
 		FileModule,
+		TechnologyModule,
 	],
 	controllers: [AppController],
 	providers: [AppService],
